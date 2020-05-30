@@ -1,0 +1,20 @@
+sudo: false
+language: cpp
+compiler:
+  - g++
+os:
+  - linux
+
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - gcc-8
+    - g++-8
+
+script:
+  - cd serverLINUX/
+  - g++ -std=c++11 4.cpp -o SERVER 
+  - cd ../
+  - bash teting.sh
